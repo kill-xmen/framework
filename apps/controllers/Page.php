@@ -16,6 +16,10 @@ class Page extends Swoole\Controller
     {
         var_dump($_GET);
     }
+    function test()
+    {
+        var_dump($_GET);
+    }
 
     //数据库测试
     function db_test()

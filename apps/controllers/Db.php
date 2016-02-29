@@ -7,7 +7,7 @@ class Db extends Swoole\Controller
     function apt_test()
     {
         $apt = new Swoole\SelectDB($this->db);
-        $apt->from('users');
+        $apt->from('user');
         $apt->equal('id', 1);
         $res = $apt->getall();
         var_dump($res);
@@ -31,7 +31,7 @@ class Db extends Swoole\Controller
     function put()
     {
         $model = Model('User');
-        $id = $model->put(array('name' => 'swoole', 'level' => 5, 'mobile' => '19999990000'));
+        $id = $model->put(array('name' => 'swoole', 'age' => 5));
         echo "insert id = $id\n";
     }
 
@@ -44,9 +44,9 @@ class Db extends Swoole\Controller
          */
         var_dump($user->get());
         /**
-         * 修改mobile 为 13800008888
+         * 修改name 为 13800008888
          */
-        $user->mobile = '13800008888';
+        $user->name = '13800008888';
         $user->save();
 
         //删除此条记录
@@ -82,7 +82,7 @@ class Db extends Swoole\Controller
     function codb()
     {
         $ret1 = $this->codb->query("show tables");
-        $ret2 = $this->codb->query("desc user_login");
+        $ret2 = $this->codb->query("desc user");
 
         $this->codb->wait(1.0);
 

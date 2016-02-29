@@ -20,8 +20,8 @@ Swoole\Network\Server::start(function ()
 
     Swoole\Error::$echo_html = false;
 
-    $server = Swoole\Network\Server::autoCreate('0.0.0.0', 8888);
+    $server = Swoole\Network\Server::autoCreate('0.0.0.0', 9501);
     $server->setProtocol($AppSvr);
     //$server->daemonize(); //作为守护进程
-    $server->run(array('worker_num' => 0, 'max_request' => 5000, 'log_file' => '/tmp/swoole.log'));
+    $server->run(array('worker_num' => 1, 'max_request' => 5000, 'log_file' => '/tmp/swoole.log'));
 });

@@ -1,13 +1,13 @@
 <?php
 $db['master'] = array(
     'type'       => Swoole\Database::TYPE_MYSQLi,
-    'host'       => "127.0.0.1",
+    'host'       => "192.168.17.251",
     'port'       => 3306,
     'dbms'       => 'mysql',
     'engine'     => 'MyISAM',
     'user'       => "root",
-    'passwd'     => "root",
-    'name'       => "test",
+    'passwd'     => "0987abc123",
+    'name'       => "test_123",
     'charset'    => "utf8",
     'setname'    => true,
     'persistent' => false, //MySQL长连接
